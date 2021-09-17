@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   def index
+    @books = Book.all
     # new部分
     @book = Book.new
 
