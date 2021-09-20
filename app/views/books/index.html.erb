@@ -3,6 +3,9 @@
   <%= book.title %>
   <%= book.body %>
   <%= link_to "show",book_path(book[:id]) %>
+  <%= link_to "Edit",edit_book_path(book[:id]) %>
+  <%= link_to "Destroy",book_path(book[:id]),method: :delete %>
+
 <% end %>
 
 <p>＝＝＝＝＝＝＝＝ここから新規投稿＝＝＝＝＝＝</p>
