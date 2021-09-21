@@ -5,10 +5,18 @@
   <%= link_to "show",book_path(book[:id]) %>
   <%= link_to "Edit",edit_book_path(book[:id]) %>
   <%= link_to "Destroy",book_path(book[:id]),method: :delete %>
-
 <% end %>
 
 <p>＝＝＝＝＝＝＝＝ここから新規投稿＝＝＝＝＝＝</p>
+
+<!--エラーメッセージ-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました。
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
 
 <!--新規投稿部分-->
 <h1>New book</h1>

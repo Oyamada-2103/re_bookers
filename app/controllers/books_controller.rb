@@ -7,9 +7,16 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    @book = Book.new(book_params)
+
+    @books = Book.all
+    # エラーメッセージを出すときのrender部分で使う
+
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      render :index
+    end
   end
 
   def show
@@ -25,7 +32,7 @@ class BooksController < ApplicationController
     book.update(book_params)
     redirect_to book_path(book)
   end
-  
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
