@@ -21,9 +21,7 @@
   </tbody>
 </table>
 
-<p>＝＝＝＝＝＝＝＝ここから新規投稿＝＝＝＝＝＝</p>
-
-<!--エラーメッセージ-->
+<!--新規投稿失敗時エラーメッセージ-->
 <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラーが発生しました。
   <% @book.errors.full_messages.each do |message| %>
