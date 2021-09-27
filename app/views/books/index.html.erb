@@ -1,3 +1,8 @@
+<!--メッセージ文-->
+<p id="notice">
+ <%= notice %>
+</p>
+
 <!--投稿一覧部分-->
 <h1>Books</h1>
 <table cellpadding>
@@ -23,10 +28,12 @@
 
 <!--新規投稿失敗時エラーメッセージ-->
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました。
-  <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+  <div>
+    <%= @book.errors.count %>件のerrorsが発生しました。
+    <% @book.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
 <% end %>
 
 
